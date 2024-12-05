@@ -1,0 +1,65 @@
+.info-box{
+    width: 100%;
+    height: max-content;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    .icon{
+        color: grey;
+    }
+
+    &:hover{
+        .icon{
+            color: blue;
+        }
+    }
+    .info-details{
+        width: 100%;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+
+        .info-header-title{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .info-route-detail{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            row-gap: 10px;
+            height: max-content;
+            justify-content: space-between;
+
+            .from-info{
+                display: flex;
+                flex-direction: column;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    
+
+                .span-info-title{
+                    font-size: 11px;
+                    font-weight: bold;
+                }
+
+                .span-info-time{
+                    display: flex;
+                    position: relative;
+                    bottom: 0;
+                    font-size: 13px;
+                    color: #239af5;
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+

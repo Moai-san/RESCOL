@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 10 384 510.675" width="384" height="510.675" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 215.7 509.2 C 267 445 384 289.4 384 202 C 384 96 298 10 192 10 C 86 10 0 96 0 202 C 0 289.4 117 445 168.3 509.2 C 180.6 524.5 203.4 524.5 215.7 509.2 Z M 192 138 C 241.267 138 272.059 191.333 247.426 234 C 235.993 253.802 214.865 266 192 266 C 142.733 266 111.941 212.667 136.574 170 C 148.007 150.198 169.135 138 192 138 Z" style="fill: rgb(252, 1, 1);" transform="matrix(1, 0, 0, 1, 0, -1.4210854715202004e-14)">
+    <title>Marker</title>
+  </path>
+  <ellipse style="paint-order: fill; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="192" cy="192.926" rx="150" ry="150" transform="matrix(1, 0, 0, 1, 0, -1.4210854715202004e-14)"/>
+  <text style="font-family: Arial, sans-serif; font-size: 181.286011px; letter-spacing: -3.2px; stroke-width: 0px;" transform="matrix(1.7014310359954834, 0, 0, 1.4697990417480469, -132.7723388671875, -83.99835968017578)" x="140.005" y="245.792" dx="-9.373" dy="5.227">B</text>
+</svg>

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-container{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    min-height: 500px;}
+
+@media screen and (max-width: 700px) {
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reserse;
+    }
+}
+
+.footer{
+    height: 60px;
+}
+

@@ -1,0 +1,32 @@
+.worktable-title-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 37px;
+
+}
+
+
+    .input-wrapper {
+        position: relative;
+        width: 200px;
+      }
+      
+      .input-box {
+        font-size: 17px;
+        padding: 10px 0;
+        border: none;
+        width: 100%;
+        background-color: transparent;
+        transition: border-color 0.3s ease-in-out;
+      }
+      
+      
+      .input-box:focus {
+        outline: none;
+      }
+      
+      .input-box:focus + .underline {
+        transform: scaleX(1);
+      }
+      

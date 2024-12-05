@@ -1,0 +1,43 @@
+.listar-redes-content{
+    padding: 0 10px;
+    height: 300px;
+    gap: 20px;
+    table{
+        border-spacing: 10px;
+    }
+    .td-title{
+        width: 80%; 
+    }
+
+    .edit-button{
+        color: #4F46E5;
+        cursor: pointer;
+        margin-left: auto; /* Empuja el botón de editar hacia la derecha */
+        display: inline-block;
+        &:hover{
+            color: #181283;
+        }
+    }
+    
+    .delete-button{
+        color: #DC2626;
+        cursor: pointer;
+        &:hover{
+            color: #6f1111;
+        }
+    }
+
+    .show-button{
+        color: #008f39;
+        cursor: pointer;
+        &:hover{
+            color: #005f26;
+        }
+    }
+}
+
+.red-main-edit{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

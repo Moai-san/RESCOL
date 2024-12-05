@@ -1,0 +1,31 @@
+@import "../../../global_styles/variables.scss";
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: $dark-color;
+    color: $soft-color;
+    span{
+        &:first-child{
+            font-weight: bold;
+        }
+
+        &:last-child{
+            font-size: 14px;
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 500px) {
+
+    .footer {
+        min-width: 430px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+}

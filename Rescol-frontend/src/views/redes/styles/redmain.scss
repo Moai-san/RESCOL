@@ -1,0 +1,23 @@
+.red-main-container {
+    display: grid; 
+    width: 100%;
+    grid-template-columns: 350px 1fr; 
+    grid-template-rows: 1fr; 
+    grid-template-areas: 
+      "red-main-menu-area red-main-map-area"; 
+  }
+
+.red-main-menu-area { 
+    grid-area: red-main-menu-area; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 5px 0px 2px -5px #70757a;
+}
+
+.red-main-map-area { 
+    grid-area: red-main-map-area; 
+}
+
+

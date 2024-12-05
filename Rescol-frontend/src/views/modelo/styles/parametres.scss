@@ -1,0 +1,55 @@
+.residuos-area{
+    display: flex;
+    flex-direction: column;
+    .residuos-item{
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .value-cpntainer{
+        height: 40px;
+        width: 55px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.parametros-area{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.frecuencia-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .frecuencia-items{
+        display: flex;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content:center ;
+        transition: color 0.3s ease, background-color 0.3s ease; /* Agregar transición */
+        cursor: pointer;
+
+        &:hover{
+            color: white;
+            background-color: #1876d2;
+        }
+
+        
+    }
+}
+
+.frecuencia-activate{
+    color: white;
+    background-color: #1876d2;
+}
+

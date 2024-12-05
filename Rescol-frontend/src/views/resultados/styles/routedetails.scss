@@ -1,0 +1,124 @@
+@import "../../../global_styles/variables.scss";
+
+
+
+.route-details-container{
+    display: grid; 
+    width: 100%;
+    height: 100%;
+    grid-template-columns:1fr; 
+    overflow-y: auto;
+    grid-template-rows: 150px 120px 310px 100px; 
+    grid-template-areas: 
+      "Detalle"
+      "Instrucción"
+      "Info"
+      "Playbox"; 
+}
+
+.route-details-detalle-container{
+    grid-area: Detalle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .info-route-header{
+        display: flex;
+        width: 100%;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .info-route-detail{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        justify-content: space-between;
+        padding: 20px;
+
+        .from-info{
+            display: flex;
+            flex-direction: column;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                
+
+            .span-info-title{
+                font-size: 11px;
+                font-weight: bold;
+            }
+
+            .span-info-time{
+                display: flex;
+                position: relative;
+                bottom: 0;
+                font-size: 13px;
+                color: #239af5;
+            }
+        }
+    }
+}
+
+.route-details-instrucción-container{
+    grid-area: Instrucción; 
+    .route-span{
+        display: flex;
+        padding: 20px;
+        align-items: center;
+        gap: 20px;
+        height: 120px;
+    }
+}
+
+.route-details-info-container{
+    grid-area: Info; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .info-route-percentage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .span-percentaje-title{
+            font-weight: bold;
+            font-size: 14px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+}
+
+.route-details-playbox-container{
+    grid-area: Playbox;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0;
+
+    .route-details-play-box{
+        display: flex;
+        flex-direction: row;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+
+/* HTML: <div class="loader"></div> */
+.spin-loader {
+    height: 10px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #25b09b;
+    --_m: 
+      conic-gradient(#0000 10%,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {to{transform: rotate(1turn)}}

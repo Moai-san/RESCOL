@@ -1,0 +1,171 @@
+.collab-content{
+  display: grid; 
+  height: 100%;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    "Individual1 Individual2"
+    "Colaboración Colaboración"
+}
+
+.Individual1 { 
+  grid-area: Individual1;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px 10px;
+}
+
+.Individual2 { 
+  grid-area: Individual2;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px 10px;
+}
+
+.Colaboración { 
+  grid-area: Colaboración;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.Info-Cards{
+  height: 100%;
+  gap: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column; /* Asegúrate de que los hijos se distribuyan en columna */
+
+
+  .info-header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+
+    .info-header-item{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+
+  .info-card-content {
+    font-size: 30px; /* Tamaño de fuente más grande para el primer elemento */
+    font-weight: bold; /* Opcional: hacer el texto en negrita */
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    
+  }
+
+  .info-card-data{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  
+}
+
+.Info-collab-Cards{
+  height: 100%;
+  gap: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column; /* Asegúrate de que los hijos se distribuyan en columna */
+
+  .info-Collab-data{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .sensitive-content{
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      flex: 1;
+
+      .info-sensitive{
+        display: flex;
+        gap: 10px;
+        height: 100%;
+        width: 100%;
+        padding: 0 20px;
+        .box{
+          width: 100%;
+          border: solid 1px #a9a8a8;
+          display: grid; 
+          height: 100%;
+          grid-template-columns: 1fr 1fr; 
+          grid-template-rows: 1fr 1fr 1fr; 
+          gap: 10px 10px; 
+          grid-template-areas: 
+            "Title Title"
+            "Value Value"
+            "Antes Ahorro"
+        }
+          .Title { 
+              padding: 10px;
+              grid-area: Title;
+              display: flex;
+              flex-direction: column;
+              align-items: center ;
+
+          }
+
+          .Value { 
+            grid-area: Value;
+            font-size: 30px; /* Tamaño de fuente más grande para el primer elemento */
+            font-weight: bold; /* Opcional: hacer el texto en negrita */
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            
+          }
+          
+          .Antes { 
+            grid-area: Antes;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+          }
+
+          .Ahorro { 
+            grid-area: Ahorro;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+          }
+      }
+  }
+}
+

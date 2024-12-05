@@ -1,0 +1,110 @@
+.no-collab-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* O min-height: 0; para asegurar que se expanda según el contenido */
+    gap: 10px;
+    overflow-y: auto; /* Agrega scroll vertical si es necesario */
+
+    .no-collab-item{
+        height: 158px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover{
+            background-color:rgba(0, 0, 0, 0.12); 
+        }
+    }
+
+    .no-collab-item-disabled{
+        height: 158px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+    }
+}
+
+.stats-dropsown-container{
+    position: sticky;
+    top:0;
+    z-index: 999;
+    background-color: white;
+}
+
+.vs-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    color: grey;
+}
+
+.add-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    color: rgba(0, 0, 0, 0.12);
+}
+
+.activate-card{
+    border-color: #239af5 !important;
+}
+
+.card-stats{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: max-content;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    border: solid rgba(0, 0, 0, 0.12);
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+            
+    .card-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .card-title{
+
+            width: 120px;
+            .card-fecha{
+                display: flex;
+                justify-content:space-between ;
+                
+            }
+        }
+
+        span{
+            font-size: 13px;
+            color: #6f6f6f;
+            
+        }
+    }
+    .card-content{
+        align-items: center;
+        gap: 5px;
+
+
+        table{
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            color: grey;
+            width: 100%;
+            font-size: 13px;
+        }
+    
+    }
+}

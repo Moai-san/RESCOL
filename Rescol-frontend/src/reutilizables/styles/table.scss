@@ -1,0 +1,56 @@
+
+.collab-table-container{
+    width: 100%;
+    table{
+        width: 100%;
+    }
+
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        unicode-bidi: isolate;
+        border-color: inherit;
+        position: sticky;
+        top: 0;
+    }
+
+    tbody {
+        display: table-row-group;
+        row-gap: 10px;
+        overflow: auto;
+    }
+
+
+    thead th {
+        border-top: none;
+        border-bottom: none !important;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        color: black;
+        background-color: white;
+        padding: 8px;
+        justify-content: left;
+    }
+
+    thead tr, tbody tr{
+        background-color: #f2f2f2;
+        justify-content: center;
+        height: 50px;
+    }
+
+        
+    
+    tbody tr:hover {background-color: #ddd;}
+    
+    tbody tr td{
+        margin-left: 30px;
+        font-size:15px;
+        text-align: center;
+    }
+
+    tbody tr th{
+        text-align: left;
+        font-size:15px;
+    }
+}

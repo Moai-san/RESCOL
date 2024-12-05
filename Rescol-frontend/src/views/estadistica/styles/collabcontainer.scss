@@ -1,0 +1,60 @@
+.collab-content{
+  display: grid; 
+  height: 100%;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    "Costo Barra"
+    "Tabla Barra"
+}
+.Costo { 
+    grid-area: Costo;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 10px;
+}
+
+.collab-content .Barra { 
+    grid-area: Barra; 
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+
+    .sensitive-content{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+    }
+}
+
+.Sensibilidad { 
+  grid-area: Sensibilidad; 
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  overflow: auto;
+}
+
+.collab-content .Tabla{
+  grid-area: Tabla; 
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}

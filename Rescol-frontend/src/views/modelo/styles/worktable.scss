@@ -1,0 +1,58 @@
+
+.worktable-menu {
+    display: flex; 
+    flex-direction: column;
+    max-width: 350px;
+    min-width: 350px;
+    background-color: rgba(255, 255, 255, 1); /* Fondo semitransparente */
+    padding: 20px;
+    z-index: 999;
+    height: calc(100vh - 60px);
+    overflow:scroll;
+    gap: 10px;
+    box-shadow: 5px 0px 5px -5px #70757a;
+}
+
+
+
+.worktable-menu-component{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+
+
+.worktable-layertool-component-enter{
+    animation: entrada-layertool  1s ease-in-out;
+}
+
+.worktable-layertool-component-exit{
+    animation: salida-layertool 1s ease-in-out;
+    animation-fill-mode: forwards; /* Mantiene el estado final después de la animación */
+}
+
+
+  @keyframes entrada-layertool {
+    from {
+        overflow: hidden;
+        height: 0px;
+    }
+    to {
+        overflow: hidden;
+        height: 228px;
+    }
+  }
+
+  @keyframes salida-layertool{
+    from {
+        overflow: hidden;
+        height: 228px;
+    }
+    to {
+        overflow: hidden;
+        height:  0px;
+    }
+  }
+

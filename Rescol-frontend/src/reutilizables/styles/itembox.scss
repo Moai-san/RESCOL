@@ -1,0 +1,42 @@
+.item-box{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.02), 0px 0px 0px 1px rgba(27, 31, 35, 0.15);
+    cursor: pointer;
+}
+
+
+.red-main-itembox-enter{
+    animation: entrada-itembox 1s ease-in-out;
+}
+
+.red-main-itembox-exit{
+    animation: salida-itembox 1s ease-in-out;
+    animation-fill-mode: forwards; /* Mantiene el estado final después de la animación */
+}
+
+@keyframes entrada-itembox {
+    from {
+        overflow: hidden;
+        height: 0px;
+    }
+    to {
+        overflow: hidden;
+        height: 300px;
+    }
+  }
+
+  @keyframes salida-itembox {
+    from {
+        overflow: hidden;
+        height: 300px;
+    }
+    to {
+        overflow: hidden;
+        height:  0px;
+    }
+  }

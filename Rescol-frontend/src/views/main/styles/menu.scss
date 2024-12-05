@@ -1,0 +1,96 @@
+@import "../../../global_styles/variables.scss";
+
+.menu{
+    height: calc(100vh - 60px);
+    width: 183px;
+    box-shadow: 5px 0px 2px -5px #70757a;
+    z-index: 1000;
+    padding-top: 30px;
+
+    .item{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        color: $dark-color;
+
+        .title{
+            font-size: 13px;
+            font-weight: 200;
+            padding-left: 15px;
+        }
+
+        .listItemTitle{
+            display: flex;
+            align-items: center;
+            align-content: center;
+            gap: 5px;
+            padding: 7px 20px 7px 20px;
+            
+            .listItemText{
+                display: flex;
+                align-items: center;
+                align-content: center;
+                gap: 5px;
+                padding: 7px 20px 7px 20px;
+            }
+            &:hover{
+                background-color: $soft-color;
+            }
+        } 
+
+            
+
+        
+
+        .activate{
+            color: #239af5;
+            border-left: 4px solid #239af5;
+
+            &:hover{
+                color:  #239af5;
+                background-color: $soft-color;
+                
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .menu {
+        display: flex;
+        height: max-content;
+        box-shadow: none;
+        width: 100%;
+        justify-content: space-between;
+        box-shadow: 0px 5px 5px -5px  #70757a;
+        z-index: 10000;
+        position: sticky;
+        top:0;
+    }
+
+    .menu .mobile-menu{
+        display: flex;
+        flex-direction: row;
+        .activate{
+            color: #239af5;
+
+            &:hover{
+                background-color: $soft-color;
+                
+            }
+        }
+    }
+
+    .menu .mobile-menu .listItemTitle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        padding: 5px;
+    }
+
+
+}

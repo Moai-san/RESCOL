@@ -1,0 +1,48 @@
+
+
+    .route-box{
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+
+        span{
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .route-details{
+            height: 500px;
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #E6E8E9;
+        }
+    }
+
+
+    .marker-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      
+      .marker-icon svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        border-radius: 50%;
+
+      }
+
+      .custom-tooltip-class{
+        background-color: green;
+        color: white;
+        font-weight: bold;
+      }

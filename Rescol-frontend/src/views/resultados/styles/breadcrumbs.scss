@@ -1,0 +1,46 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+    gap:5px;
+}
+.breadcrumbs .crumb-icon{
+    color: grey;
+}
+
+.breadcrumbs .crumbs-container{
+    display:flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    .item{
+        flex-wrap: nowrap;
+        color: grey;
+        font-size: 13px;
+        overflow-x: hidden;
+        max-width: 80px;
+
+    
+        .deactivate{
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+            
+        }
+    
+        .activate{
+            font-weight: bold;
+        }
+    }
+
+}
+
+
+
+
+
+
+

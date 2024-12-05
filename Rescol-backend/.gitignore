@@ -1,0 +1,9 @@
+api/migrations/__pycache__/
+api/migartions/0001_initial.py
+api/__pycache__/
+mockup/__pycache__/
+
+api/data/outputs/*
+api/data/redes/*
+api/data/segmentos/*
+api/data/temp/*

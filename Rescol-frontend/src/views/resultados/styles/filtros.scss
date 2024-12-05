@@ -1,0 +1,129 @@
+.filter {
+    position: relative;
+    border-radius: 10px;
+    background-color: #f5f5f6;
+
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.filter-deactivate{
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: default;
+    border-radius: 10px;
+
+    padding: 5px 10px 5px 10px;
+}
+
+.filter-tag-area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+}
+
+.filtros-tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: #239af5;
+    width: max-content;
+    border-radius: 20px;
+    font-size: 13px;
+    color: white;
+    padding: 2px;
+
+}
+
+.filtros-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 350px;
+    background-color: white;
+    box-shadow: 5px 0px 2px -5px #70757a;
+    padding: 20px;
+    gap: 10px;
+}
+
+.filtros-container .filtros-items{
+    width: 100%;
+}
+
+.filtros-container .filtros-items .filtros-week-area{
+    width: 100%;
+    border-radius: 10px;
+    z-index: 1;
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+
+}
+
+.filtros-container .filtros-items .filtros-week-area .filtros-week{
+    display: flex;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content:center ;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Agregar transición */
+    cursor: pointer;
+
+    &:hover{
+        color: white;
+        background-color: #1876d2;
+    }
+}
+
+.filtros-container table{
+    width: 100%;
+    border-collapse: separate; /* Cambiado de collapse a separate */
+    border-spacing: 5px; /* Espacio entre las celdas */
+}
+
+.filtros-container table td:nth-child(1) {
+    width: 70%; /* Porcentaje del ancho total */
+}
+.filtros-container table td:nth-child(2) {
+    width: 10%; /* Porcentaje del ancho total */
+}
+
+
+
+
+
+
+
+.filt-cont{
+    width:350px;
+    box-shadow:5px 0px 5px -5px #70757a;
+    z-index: 998;
+}
+
+.filter-frecuencia{
+    margin-top: 20px;
+}
+
+.filter-button{
+    cursor: pointer;
+}
+
+.filt-value-container{
+        height: 40px;
+        width: 80px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+

@@ -1,0 +1,138 @@
+.no-collab-content{
+  display: grid; 
+  height: 100%;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 50px calc(50% - 35px) calc(50% - 35px); 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    "Header Header"
+    "Costos Grafico"
+    "Tabla Tabla"; 
+}
+.Header { 
+    grid-area: Header;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .header-item{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+    }
+}
+
+.Costos { 
+    grid-area: Costos;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
+
+    .normal-item {
+        font-size: 20px; /* Tamaño de fuente base para todos los elementos */
+        display: flex;
+        align-items: center;
+        cursor: default;
+        
+    }
+    
+    .first-item {
+        font-size: 60px; /* Tamaño de fuente más grande para el primer elemento */
+        font-weight: bold; /* Opcional: hacer el texto en negrita */
+        cursor: default;
+        
+    }
+ }
+
+ .Grafico { 
+    grid-area: Grafico; 
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+ }
+
+ .Tabla { 
+    grid-area: Tabla; 
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 300px;
+
+    .table-container{
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+    }
+
+    .no-collab-table{
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .no-collab-table thead {
+      display: table-header-group;
+      vertical-align: middle;
+      unicode-bidi: isolate;
+      border-color: inherit;
+      position: sticky;
+      top: 0;
+    }
+
+    .no-collab-table tbody {
+      display: table-row-group;
+      row-gap: 10px;
+      overflow: auto;
+    }
+
+
+     .no-collab-table thead th {
+      border-top: none;
+      border-bottom: none !important;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      color: black;
+      background-color: white;
+      padding: 8px;
+      justify-content: left;
+  }
+
+    .no-collab-table thead tr, .no-collab-table tbody tr{
+      background-color: #f2f2f2;
+      padding: 8px;
+      justify-content: center;
+      height: 50px;
+    }
+
+    .no-collab-table tbody tr.spacer {
+      height: 10px;
+      
+  }
+      
+    
+    .no-collab-table tbody tr:hover {background-color: #ddd;}
+    
+    .no-collab-table thead tr td .table-body-item,.no-collab-table tbody tr td .table-body-item{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-left: 30px;
+        font-size:14px;
+      }
+
+ }

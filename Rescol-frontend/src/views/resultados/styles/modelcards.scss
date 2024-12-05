@@ -1,0 +1,127 @@
+@import "../../../global_styles/variables.scss";
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-y: auto; /* Cambia a auto si deseas mostrar el scroll solo cuando sea necesario */
+
+    .card{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 13px;
+        border: solid rgba(0, 0, 0, 0.12);
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+        .new_data {
+            position: absolute;
+            display: flex;
+            top: -10px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: white;
+            padding: 2px 2px; /* Añadido para darle espacio al texto */
+            border-radius: 10px; /* Añadido para hacer una esquina redondeada */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .new_data_model{
+            display: flex;
+            position: relative;
+            width: 100%;
+            align-items: center;
+            justify-content: flex-end;
+
+            .new-data-container{
+                display: flex;
+                position: relative;
+                right: -10px;
+                background-color: #ff3333;
+                align-items: center;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 13.4px;
+                    height: 13.4px;
+                    background-color: #ff3333;
+                    left: -7px;
+                    transform: rotate(45deg) 
+                }
+
+                span{
+                    width: max-content;
+                    font-weight: bold;
+                    color: white;
+                    padding: 2px 9px; /* Añadido para darle espacio al texto */
+                }
+            }
+
+        }
+                
+        .card-header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .card-title{
+                .card-fecha{
+                    display: flex;
+                    justify-content:space-between ;
+                    gap: 20px;
+                    
+                }
+            }
+
+            span{
+                font-size: 13px;
+                color: #6f6f6f;
+                
+            }
+        }
+        .card-content{
+            align-items: center;
+            gap: 5px;
+
+
+            table{
+                font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                color: grey;
+                width: 100%;
+                font-size: 13px;
+            }
+        
+        }
+    }
+
+    .card-activate{
+        background-color: $dark-bg;
+
+    }
+
+    .card:hover{
+        background-color: $dark-bg;
+
+
+}
+
+}
+
+.etiqueta {
+    background-color: #ff3333; /* Fondo rojo claro */
+    color: #ffffff; /* Texto blanco */
+    border-radius: 20px; /* Bordes circulares */
+    padding: 5px 10px; /* Espaciado interno */
+    display: inline-block; /* Hace que el fondo y el texto se ajusten al contenido */
+    font-size: 12px;  
+}

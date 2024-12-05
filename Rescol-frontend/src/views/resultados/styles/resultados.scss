@@ -1,0 +1,29 @@
+@import "../../../global_styles/variables.scss";
+
+
+.resultados-main-container {
+    display: grid; 
+    width: 100%;
+    grid-template-columns: 350px 1fr; 
+    grid-template-rows: 1fr; 
+    grid-template-areas: 
+      "resultados-main-menu-area resultados-main-map-area"; 
+  }
+
+.resultados-main-menu-area { 
+    grid-area: resultados-main-menu-area; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 5px 0px 2px -5px #70757a;
+    height: calc(100vh - 60px); /* Restar la altura del footer si es necesario */
+    overflow: auto;
+}
+
+.resultados-main-map-area { 
+    grid-area: resultados-main-map-area; 
+}
+
+
+

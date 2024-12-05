@@ -1,0 +1,57 @@
+@import "./variables.scss";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.main{
+    display: grid;
+    grid-template-rows: 60px auto 60px;
+    font-family: "Inter", sans-serif;
+    background-color: $main-bg;
+    color: $main-color;
+
+    .container{
+        background-color: $dark-bg;
+        display: flex;
+        
+
+        .menuContainer{
+            background-color: $main-bg;
+            width:  10vw;
+            min-width: 200px;
+            padding-top: 40px;
+            z-index: 1000;
+        }
+        
+        .contentConteiner{
+            width: 100%;
+        }
+    }
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 7px; /* Ancho de la barra de desplazamiento */
+    position: fixed; /* Posición fija para superponer */ 
+    opacity: 100;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px; /* Hacer la scrollbar redonda */
+    background-color: #70757a; /* Cambiar color del thumb */
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 6px; /* Hacer la scrollbar redonda */
+    background-color:transparent; /* Cambiar color de fondo de la pista */
+}
+
+
+

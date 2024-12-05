@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - DATABASE_HOST=host.docker.internal
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
+
+  backend:
+    build: ./Rescol-backend
+    ports:
+      - "8000:8000"
+    command: >
+            bash -c "
+            mkdir -p ./api/data/outputs ./api/data/temp/ ./api/data/redes/ ./api/data/segmentos/
+            && g++ ./api/data/scripts/segmentación/main.cpp ./api/data/scripts/segmentación/archivos.cpp ./api/data/scripts/segmentación/nodos.cpp ./api/data/scripts/segmentación/segmentacion.cpp ./api/data/scripts/segmentación/conectividad.cpp -o ./api/data/scripts/segmentación/main -ljsoncpp
+            && cmake -S ./api/data/scripts/rutas/ -B ./api/data/scripts/rutas/
+            && make -C ./api/data/scripts/rutas/
+            && rm -f ./api/migrations/0001_initial.py
+            && python manage.py makemigrations
+            && python manage.py migrate
+            && python manage.py runserver "0.0.0.0:8000"
+            "
+
+    depends_on:
+      - postgres
+    volumes:
+      - ./Rescol-backend:/rescol-backend 
+
+  frontend:
+    build: ./Rescol-frontend
+    ports:
+      - "3000:3000"
+    command: >
+            bash -c "
+            npm start
+            "
+    depends_on:
+      - backend
+    volumes:
+      - ./Rescol-frontend:/Rescol-frontend 
+      - /Rescol-frontend/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  

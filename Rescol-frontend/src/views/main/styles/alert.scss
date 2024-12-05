@@ -1,0 +1,17 @@
+.alert-container {
+    position: fixed;
+    top: 60px;
+    left: 50%; /* Centra el elemento horizontalmente */
+    transform: translateX(-50%);
+    width: 80%; /* Ancho del alert */
+    max-width: 400px; /* Ancho máximo del alert */
+    margin-top: 20px; /* Margen inferior para separarlo del borde de la pantalla */
+    z-index: 10000; /* Asegura que esté por encima de otros elementos */
+    opacity: 1; /* Comienza con opacidad 0 para la animación */
+    transition: opacity 0.3s ease-in-out; /* Transición de opacidad durante 0.3 segundos */
+}
+
+.alert-show {
+    opacity: 1; /* Muestra el alert con opacidad 1 */
+}
+  

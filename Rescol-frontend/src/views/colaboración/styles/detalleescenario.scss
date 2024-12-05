@@ -1,0 +1,60 @@
+/* Estilo general para la tabla */
+.detalle-escenario{
+    table {
+        width: 100%;
+        border-collapse: collapse; /* Quita los espacios entre celdas */
+        margin: 20px 0; /* Margen superior e inferior */
+        font-family: Arial, sans-serif; /* Tipografía de la tabla */
+    }
+
+    /* Estilo para el encabezado de la tabla */
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        unicode-bidi: isolate;
+        border-color: inherit;
+    }
+
+    thead th{
+        border-top: none;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        color: black;
+        background-color: white;
+        text-align: left;
+        padding: 12px;
+    }
+
+    /* Estilo para el cuerpo de la tabla */
+    tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; /* Color de fondo para filas pares */
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: white; /* Color de fondo para filas impares */
+    }
+
+    tbody td:nth-child(even) {
+        padding: 12px; /* Espaciado interno */
+        text-align: right;
+    }
+
+    tbody td:nth-child(odd) {
+        padding: 12px; /* Espaciado interno */
+        font-weight: bold;
+    }
+
+}
+
+
+.edit-button{
+        color: #4F46E5;
+        cursor: pointer;
+        margin-left: auto; /* Empuja el botón de editar hacia la derecha */
+        display: inline-block;
+        &:hover{
+            color: #181283;
+        }
+
+    }

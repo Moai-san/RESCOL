@@ -13,7 +13,7 @@ Una vez que tengas Docker instalado y corriendo, podrás continuar con la instal
 
 ## Instalación
 
-##### 1. Clonar repositorio o el descragar [archivo ZIP](https://github.com/mnbarrios/RESCOL/archive/refs/heads/main.zip) de la aplicación
+##### 1. Clonar repositorio o descragar [archivo ZIP](https://github.com/mnbarrios/RESCOL/archive/refs/heads/main.zip) de la aplicación
 
 ```bash
   https://github.com/mnbarrios/RESCOL.git
@@ -23,16 +23,45 @@ Una vez que tengas Docker instalado y corriendo, podrás continuar con la instal
 ```bash
   cd RESCOL
 ```
-##### 3. Ejecutar el siguiente comando para levantar un contenedor docker con la aplicación.
-```bash
-  docker compose up
-```
-Esto creará contenedores que dejarán la API, el Front y la Base de datos corriendo de manera local. 
+##### 3. Ejecutar los siguientes comandos para levantar un contenedor docker con la aplicación:
+  - Creación de imagen:
+    ```bash
+    docker compose build --no-cache
+    ```
+- Creación del contenedor:
+  ```bash
+    docker compose create 
+  ```
+
+##### 4. Gestión de los contenedores desde la aplicación:
+- Los contenedores pueden **iniciarse**, **detenerse** o **pausarse** directamente desde la interfaz de la aplicación según sea necesario.
+- Alternativamente, puedes realizar estas acciones desde el terminal utilizando los siguientes comandos:
+
+  Iniciar los contenedores pausados:
+  ```bash
+  docker compose start
+  ```
+  Pausar los contenedores:
+  ```bash
+  docker compose pause
+  ```
+  Detener los contenedores:
+  ```bash
+  docker compose stop
+  ```
+  Eliminar completamente los contenedores:
+  ```bash
+  docker compose down
+  ```
+
+
 
 Para acceder a la API ingresea a: http://localhost:8000/api/ 
 
 
 Para acceder al FRONT ingresea a: http://localhost:3000/
+
+> **Nota:** Al iniciar los contenedores, es recomendable esperar unos minutos antes de intentar acceder a los enlaces proporcionado. Los contenedores pueden tardar un poco en arrancar completamente, por lo que es posible que no respondan inmediatamente después de ser iniciados.
 
 
 ## Crear usuario 
@@ -80,7 +109,7 @@ Estos archivos están a su disposición para probar la aplicación.
 
 > **Nota:** Si la red que desea cargar es colaborativa (por ejemplo, **CNQN.zip**), es necesario que las redes individuales (**CN.zip** y **QN.zip**) hayan sido subidas previamente. 
 
-6. Adicional: Si la red es colaborativa, selecione las redes individuales que la conforman.
+6. **Adicional:** Si la red es colaborativa, selecione las redes individuales que la conforman.
 
 ¡Listo! Ahora podrá trabajar con las redes viales cargadas en la aplicación.
 

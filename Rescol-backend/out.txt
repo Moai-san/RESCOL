@@ -2,11 +2,11 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Datos de debug 🪲: 
 
-Nombre de la instancia: Seg_48
+Nombre de la instancia: Seg_23
 Comentario: 
-Número de nodos: 82
-Número de arcos obligatorios: 51
-Número de arcos opcionales: 26
+Número de nodos: 123
+Número de arcos obligatorios: 87
+Número de arcos opcionales: 28
 Número de nodos iniciales: 1
 Número de nodos terminales: 1
 Número de nodos terminales: 1
@@ -14,19 +14,19 @@ No hay restricciones
 
 Datos: 
 Nodos iniciales: 
-901 
+124 
 
 Nodos terminales: 
-901 
+124 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ⌚Época 0
-Tiempo de ejecución: 2.0036 segundos
+Tiempo de ejecución: 2.0248 segundos
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ✨🏆 Mejor resultado 🏆✨
 
-Mejor hormiga: 3 🐜🥇
-Mejor costo: 20249.3 ⏩
-Mejor longitud: 136 ⚡
+Mejor hormiga: 0 🐜🥇
+Mejor costo: 17090.8 ⏩
+Mejor longitud: 197 ⚡
 El directorio de salida:./api/data/temp
 La solución es: 

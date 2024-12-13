@@ -136,9 +136,9 @@ export default function RSD({parametres, setParametres}) {
           value={parametres.capacidad}
           onChange={handleTONChange}
         >
-          <FormControlLabel value={6} control={<Radio size="small" />} label="6" />
+          <FormControlLabel disabled value={6} control={<Radio size="small" />} label="6" />
           <FormControlLabel value={10} control={<Radio size="small" />} label="10"/>
-          <FormControlLabel value={15} control={<Radio size="small" />} label="15"/>
+          <FormControlLabel disabled value={15} control={<Radio size="small" />} label="15"/>
         </RadioGroup>
       </FormControl>
 

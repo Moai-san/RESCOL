@@ -4,5 +4,7 @@ COPY . ./Rescol-frontend
 
 WORKDIR /Rescol-frontend
 
+RUN apt-get update
+
 RUN npm install
 

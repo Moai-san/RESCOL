@@ -622,7 +622,7 @@ class modelosViewSet(viewsets.ModelViewSet):
 
         # Si todos los atributos coinciden, has encontrado la instancia correspondiente
         if len(instance_modelo) != 0:
-                return Response({ 'title': 'ADVERTENCIA', 'text': 'Ya existe una optimización con esas características.', 'type': 'warning'},status=status.HTTP_412_PRECONDITION_FAILED)
+                return Response({'code': 'MODEL_ALREADY_EXIST'},status=status.HTTP_412_PRECONDITION_FAILED)
         
         
         #Generara Planificaciones
@@ -632,15 +632,16 @@ class modelosViewSet(viewsets.ModelViewSet):
             #Preparar segemntos
             red_instance = redesViales.objects.get(id=red)
             #Fijo 2 días (cambiar)
-            print(frecuencia)
-            if red_instance.nombre == 'Cerro Navia':
+            
+            '''if red_instance.nombre == 'Cerro Navia':
                 p = 'CN{}'.format(frecuencia)
             elif(red_instance.nombre == 'Quinta Normal'):
                 p = 'QN{}'.format(frecuencia)
             else:
-                p = 'QNCN{}'.format(frecuencia)
+                p = 'QNCN{}'.format(frecuencia)'''
 
-
+    
+            p = 'archivo_segmetación'
             # Obtener la ruta absoluta del archivo ejecutable a.out
             ruta_ejecutable = os.path.join(os.path.dirname(__file__), 'data/scripts/segmentación', 'main')
 

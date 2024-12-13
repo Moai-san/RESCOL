@@ -17,7 +17,10 @@ export const ErrorManager = (code) => {
         return ({title: title, type: type, text:'Contraseña incorrecta'})
 
     }else if (code === 'MODEL_NAME_ALREADY_EXIST'){
-        return ({title: title, type: type, text:'Ya existe una optimización con ese nombre'})
+        return ({title: title, type: type, text:'Ya existe una optimización para la comuna con ese nombre'})
+
+    }else if (code === 'MODEL_ALREADY_EXIST'){
+        return ({title: title, type: type, text:'Ya existe una optimización de la comuna con esas características'})
     }else{
         return ({title: title, type: type, text:'Ha ocurrido un error inesperado'})
     }

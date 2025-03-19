@@ -79,7 +79,7 @@ const MapRoutes = React.memo(() => {
 
   useEffect(()=>{
     if(history.state && Object.keys(history.state).length > 1 && history.state.routeData){
-      setRouteGeoData(history.state.routeData.routes[urlParams.ruta])
+      setRouteGeoData(history.state.routeData.routes[urlParams.ruta-1])
     } 
     else{
       setRouteGeoData(null) 

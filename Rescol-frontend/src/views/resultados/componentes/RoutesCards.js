@@ -57,7 +57,6 @@ function RouteCards() {
     <div className="card-container" >
         {
             routeData && routeData.routes.map((route, index) => {
-               
                 return (
                             <div className={"card"} onClick={()=> getSelectedData(index)} key={index} onMouseEnter={()=>dispatch(changeId({id:index}))} onMouseLeave={()=>{dispatch(changeId({id:-1}))}}> 
                                 <div className='card-header'>

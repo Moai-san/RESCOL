@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#&+l=6rqo_31=d691@n48(dx$kwb+sd_r6b=5=5#qavfbm(#&a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['api-rescol.moai-san.net']
 
 
 # Application definition
@@ -93,7 +93,7 @@ DATABASES = {
         'NAME'    : 'root',
         'USER'    : 'root',
         'PASSWORD': 'root',
-        'HOST'    : 'host.docker.internal',
+        'HOST'    : 'postgres',
         'PORT'    : '5432'
     }
 }
@@ -143,5 +143,46 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
+    'https://rescol.moai-san.net',
+    'https://api-rescol.moai-san.net'
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+   'https://rescol.moai-san.net',
+   'https://api-rescol.moai-san.net'
+]
+
+#CORS_ORIGINS_WHITELIST = 
+#[
+#   'rescol.moai-san.net',
+#   'api-rescol.moai-san.net'
+#]
+#SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+
+##WEB BROWSER VIEW RELATED TWEAKS
+
+#SET RENDER CONST TO DISABLE API WEB BROWSER VIEW
+DEFAULT_RENDERER_CLASSES = (
+    'rest_framework.renderers.JSONRenderer',
+)
+
+#SET API TO ASK FOR AUTHENTICATION
+DEFAULT_PERMISSION_CLASSES = (
+    'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+)
+
+#SET RENDER CONST TO ENABLE API WEB BROWSER VIEW IF DEBUG IS ENABLED
+if DEBUG:
+    DEFAULT_RENDERER_CLASSES = DEFAULT_RENDERER_CLASSES + (
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+
+#APPLY CHANGES TO THE WEB BROWSER VIEW
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': DEFAULT_PERMISSION_CLASSES ,
+    'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES
+}

@@ -3,9 +3,9 @@ services:
     image: postgres
     restart: always
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
-      - DATABASE_HOST=host.docker.internal
+      - DATABASE_HOST=host.containers.internal
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=root
@@ -14,6 +14,8 @@ services:
     build: ./Rescol-backend
     ports:
       - "8000:8000"
+    environment:
+      - DB_HOST=localhost
     command: >
             bash -c "
             mkdir -p ./api/data/outputs ./api/data/temp/ ./api/data/redes/ ./api/data/segmentos/
@@ -35,15 +37,21 @@ services:
     build: ./Rescol-frontend
     ports:
       - "3000:3000"
+    environment:
+      - REACT_APP_API_REDES_URL=https://api-rescol.moai-san.net/api/redes
+      - REACT_APP_API_USER_URL=https://api-rescol.moai-san.net/api/usuarios
+      - REACT_APP_API_MODEL_URL=https://api-rescol.moai-san.net/api/modelos
+      - REACT_APP_API_TOOLS_URL=https://api-rescol.moai-san.net/api/
+      - REACT_APP_API_COMUNAS_URL=https://api-rescol.moai-san.net/api/comunas/
+      - REACT_APP_SECURITY_KEY='WsTQfrDWPj12mCF{k_cVz+6c)8vmj9' 
+      - CHOKIDAR_USEPOLLING=true
     command: >
             bash -c "
             npm start
             "
     depends_on:
       - backend
-    volumes:
-      - ./Rescol-frontend:/Rescol-frontend 
-      - /Rescol-frontend/node_modules
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+#    volumes:
+#      - ./Rescol-frontend:/Rescol-frontend 
+#      - /Rescol-frontend/node_modules
   

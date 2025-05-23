@@ -38,11 +38,11 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_API_REDES_URL=https://api-rescol.moai-san.net/api/redes
-      - REACT_APP_API_USER_URL=https://api-rescol.moai-san.net/api/usuarios
-      - REACT_APP_API_MODEL_URL=https://api-rescol.moai-san.net/api/modelos
-      - REACT_APP_API_TOOLS_URL=https://api-rescol.moai-san.net/api
-      - REACT_APP_API_COMUNAS_URL=https://api-rescol.moai-san.net/api/comunas
+      - REACT_APP_API_REDES_URL=http://example.com/api/redes
+      - REACT_APP_API_USER_URL=http://example.com/api/usuarios
+      - REACT_APP_API_MODEL_URL=http://example.com/api/modelos
+      - REACT_APP_API_TOOLS_URL=http://example.com/api
+      - REACT_APP_API_COMUNAS_URL=http://example.com/api/comunas
       - REACT_APP_SECURITY_KEY='WsTQfrDWPj12mCF{k_cVz+6c)8vmj9' 
       - CHOKIDAR_USEPOLLING=true
     command: >

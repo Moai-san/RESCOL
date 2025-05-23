@@ -23,6 +23,20 @@ Una vez que tengas Docker instalado y corriendo, podrás continuar con la instal
 ```bash
   cd RESCOL
 ```
+
+##### 2.1. Cambiar rutas de api en la seccion frontend del docker-compose file, a las rutas del servidor donde se levantará:
+```bash
+  nano ./docker-compose.yml
+          frontend: ....
+            ...
+            environment:
+            - REACT_APP_API_REDES_URL= URL_ACA/api/redes
+            - REACT_APP_API_USER_URL= URL_ACA/api/usuarios
+            - REACT_APP_API_MODEL_URL= URL_ACA/api/modelos
+            - REACT_APP_API_TOOLS_URL= URL_ACA/api
+            - REACT_APP_API_COMUNAS_URL= URL_ACA/api/comunas
+```
+
 ##### 3. Ejecutar los siguientes comandos para levantar un contenedor docker con la aplicación:
   - Creación de imagen:
     ```bash

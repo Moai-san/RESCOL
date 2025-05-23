@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const modelApi = axios.create({
-    baseURL: 'http://localhost:8000/api/'
+    baseURL: REACT_APP_API_TOOLS_URL
 })
 
-export const getChartsData = (obj) => modelApi.post('procesarCostos/', obj)
+export const getChartsData = (obj) => modelApi.post('/procesarCostos/', obj)

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const comunasApi = axios.create({
-    baseURL: 'http://localhost:8000/api/comunas'
+    baseURL: REACT_APP_API_COMUNAS_URL
 })
 
 

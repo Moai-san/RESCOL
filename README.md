@@ -27,6 +27,7 @@ Una vez que tengas Docker instalado y corriendo, podrás continuar con la instal
 ##### 2.1. Cambiar rutas de api en la seccion frontend del docker-compose file, a las rutas del servidor donde se levantará:
 ```bash
   nano ./docker-compose.yml
+          ...
           frontend: ....
             ...
             environment:
@@ -35,6 +36,15 @@ Una vez que tengas Docker instalado y corriendo, podrás continuar con la instal
             - REACT_APP_API_MODEL_URL= URL_ACA/api/modelos
             - REACT_APP_API_TOOLS_URL= URL_ACA/api
             - REACT_APP_API_COMUNAS_URL= URL_ACA/api/comunas
+```
+##### 2.2. Cambiar hosts y origenes permitidos para backend, a las rutas del servidor donde se levantará:
+```bash
+  nano ./Rescol-backend/mockup/settings.py
+      ...
+      ALLOWED_HOSTS = ['URL BACKEND ACÁ (NO AGREGAR PROTOCOLO, LA URL DEBE IR LIMPIA, EJEMPLO: api.example.com)']
+      ...
+      CORS_ALLOWED_ORIGINS = ['URL BACKEND ACÁ (CON PROTOCOLO, EJEMPLO: https://api.example.com)','URL FRONTEND ACÁ (CON PROTOCOLO, EJEMPLO: https://example.com)']
+      CSRF_TRUSTED_ORIGINS =  ['URL BACKEND ACÁ (CON PROTOCOLO, EJEMPLO: https://api.example.com)','URL FRONTEND ACÁ (CON PROTOCOLO, EJEMPLO: https://example.com)']
 ```
 
 ##### 3. Ejecutar los siguientes comandos para levantar un contenedor docker con la aplicación:

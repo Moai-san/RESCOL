@@ -67,7 +67,7 @@ function Leaflet({ lineData }) {
 };
 
   const onEachFeature = (feature, layer) => {
-    const basuraArc = feature.properties['basura arc'];
+    const basuraArc = feature.properties['RESIDUOS'];
     layer.bindTooltip(`Residuos del arco: ${basuraArc?Number.parseFloat(basuraArc).toFixed(2):0}`);
   };
 
@@ -123,16 +123,3 @@ function Leaflet({ lineData }) {
 }
 
 export default Leaflet;
- /*
- else{
-
-    const zonas = feature.properties['Zonas'];
-      return {
-          fillColor: 'black',
-          weight: 3,  // Ancho de la línea principal
-          opacity: 1,
-          color: testData[zonas],  // Color de la línea principal
-          fillOpacity: 1,
-      };
-    }
- */

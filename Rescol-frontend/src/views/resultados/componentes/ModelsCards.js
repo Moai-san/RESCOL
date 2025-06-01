@@ -65,10 +65,9 @@ function ModelCards() {
   }
 
   const getSelectedData = async (id, comuna) => {
-    console.log('entra')
     try {
       const response = await getCropByUser(id).then((res) => res.data);
-      console.log(response)
+      //console.log(response)
       const item = filterData.find((item) => item.id === id);
       setNombre(item.nombre)
       setAuxRoutData({ ...response.data, data: item });

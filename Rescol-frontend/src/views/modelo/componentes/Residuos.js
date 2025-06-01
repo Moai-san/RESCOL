@@ -21,6 +21,8 @@ export default function RSD({parametres, setParametres}) {
 
   const [activate, setActivate] = useState([true, false, false, false, false, false])
 
+  const [cosValue, setCosValue] = useState("");
+
   const handleRSDChange = (e) => {
     setParametres({...parametres, residuos: e.target.value})
   }
@@ -33,17 +35,27 @@ export default function RSD({parametres, setParametres}) {
     setParametres({...parametres, jornada: e.target.value})
   }
 
-
   const handleCOSChange = (e) => {
-    const newValue = e.target.value;
-    if(newValue === '') {
-        setParametres({...parametres, costo: 0});
-    } else {
-        const costo = parseInt(newValue)
-        if(costo <= 2000) setParametres({...parametres, costo: costo})
-        else setParametres({...parametres, costo: 2000});
+    setCosValue(e.target.value); // solo guardamos lo que el usuario escribe
+  };
+
+
+  const handleCOSBlur = () => {
+    const parsed = parseInt(cosValue);
+    
+    if (isNaN(parsed)) {
+      setCosValue('100');
+      setParametres({ ...parametres, costo: 100 });
+      return;
     }
-  }
+  
+    let validated = parsed;
+    if (parsed <= 100) validated = 100;
+    else if (parsed > 2000) validated = 2000;
+  
+    setCosValue(validated.toString());
+    setParametres({ ...parametres, costo: validated });
+  };
 
   const handleRECChange = (indice, f) => {
 
@@ -117,11 +129,13 @@ export default function RSD({parametres, setParametres}) {
 
         <div className={`file-input-container`}>
                 <InputAdornment position="start">$</InputAdornment>
-                <input  className="file-input-name" 
-                        placeholder={parametres.costo}
-                        value={parametres.costo}
-                        type='text'
-                        onChange={handleCOSChange}
+                <input
+                  className="file-input-name"
+                  placeholder="min: 100 - max: 2000"
+                  value={cosValue}
+                  type="text"
+                  onChange={handleCOSChange}
+                  onBlur={handleCOSBlur}
                 />
         </div>
 
@@ -141,7 +155,7 @@ export default function RSD({parametres, setParametres}) {
           <FormControlLabel disabled value={15} control={<Radio size="small" />} label="15"/>
         </RadioGroup>
       </FormControl>
-
+      
       <FormControl>
         <Typography>Jornada laboral (h)
         {infoButton('Joranada laboral en horas')}

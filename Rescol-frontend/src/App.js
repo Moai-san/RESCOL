@@ -8,16 +8,20 @@ import Users from "./views/Usuarios/usuarios"
 import Footer from "./views/main/componentes/Footer"
 import Navbar from "./views/main/componentes/Navbar"
 import Menu from "./views/main/componentes/Menu"
+import AlertNotification from "./views/main/componentes/Alert"
 import Colaboración from "./views/colaboración/componentes/Colabroración"
 //import "./styles/global.scss"
 import "./global_styles/app.scss"
 
-import { BrowserRouter, Routes, Route, Outlet} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet, Navigate} from "react-router-dom";
+import { useAlertDataContext, useSetAlertDataContext } from "./views/providers/DataProvider"
 import { useLoginContext, useSetLoginContext} from "./views/providers/AccountProvider"
 import { useUserContext } from "./views/providers/AccountProvider"
 import Login from "./views/login/componentes/Login"
 import { useEffect } from "react"
 import RedMain from "./views/redes/componentes/RedMain"
+
+import {useNotificationContext, useRouteDataContext} from './providers/DataProvider'
 
 
 //PLANIFICACIONES
@@ -26,6 +30,7 @@ import ListarRedes from "./views/resultados/componentes/ListarRedes"
 import ModelCards from "./views/resultados/componentes/ModelsCards"
 import RouteCards from "./views/resultados/componentes/RoutesCards"
 import DetalleDeRutas from "./views/resultados/componentes/Rutas"
+import Notification from "./views/main/componentes/Notificaction"
 
 function App() {
   const isLogged = useLoginContext()

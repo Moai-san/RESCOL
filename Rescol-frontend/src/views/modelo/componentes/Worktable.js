@@ -35,7 +35,7 @@ function WorkTable() {
    const [projectName, setProjectName] = useState('Nuevo escenario');
    const [parametres, setParametres] = useState({
                                                    residuos: 0, 
-                                                   costo: 0, 
+                                                   costo: 100, 
                                                    capacidad: 10, 
                                                    jornada: 8, 
                                                    frecuencia: 2

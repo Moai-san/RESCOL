@@ -5,13 +5,17 @@ import { useLocation, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import L from 'leaflet'
 import { makeIcon, inicio, fin } from '../assets/Icons';
+import CropFreeIcon from '@mui/icons-material/CropFree';
+
 
 const MapRoutes = React.memo(() => {
-  const position = [-33.43912288624236, -70.67521211218381];
+  const [position, setPosition] = useState([-33.43912288624236, -70.67521211218381])
   const featureGroupRef = useRef(null);
   const mapRef = useMapContext();
   const history = useLocation();
   const urlParams = useParams();
+
+  const id = useSelector((state) => state.segmentId.id);
 
 
   const [segmentData, setSegmentData] = useState(null)
@@ -63,7 +67,7 @@ const MapRoutes = React.memo(() => {
         L.tooltip({
           permanent: true,
           direction: 'center',
-          className: zonas[i]=== `S${i+1}` && 'custom-tooltip-class',
+          className: zonas[i]=== `S${id+1}` && 'custom-tooltip-class',
           offset: [0, 0] // Ajusta el offset según sea necesario
         })
         .setContent(zonas[i])
@@ -72,14 +76,14 @@ const MapRoutes = React.memo(() => {
       
       }
     }
-  },[segmentData, geoJson])
+  },[segmentData, geoJson, id])
 
   //CONTROL DE RUTA
   const [routeGeoData, setRouteGeoData] = useState(null)
 
   useEffect(()=>{
     if(history.state && Object.keys(history.state).length > 1 && history.state.routeData){
-      setRouteGeoData(history.state.routeData.routes[urlParams.ruta-1])
+      setRouteGeoData(history.state.routeData.routes[urlParams.ruta - 1 ])
     } 
     else{
       setRouteGeoData(null) 
@@ -230,12 +234,52 @@ const MapRoutes = React.memo(() => {
   };
 
 
+  const fitToGeoJSON = () => {
+    const map = mapRef.current;
+
+    if (!map) return;
+
+    let bounds = null;
+
+    if (display && segmentData?.data) {
+      bounds = L.geoJSON(segmentData.data).getBounds();
+    } else if (!display && geoJson) {
+      bounds = L.geoJSON(geoJson).getBounds();
+    }
+
+    if (bounds) {
+      map.fitBounds(bounds, { padding: [20, 20] });
+    }
+  };
+
   return (
     <MapContainer center={position} ref={mapRef} zoom={12} style={{ height: '100%', width: '100%' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
+      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
+      <button
+        onClick={fitToGeoJSON}
+        style={{
+          position: 'absolute',
+          display:'flex',
+          top: '10px',
+          right: '10px',
+          zIndex: 1000,
+          padding: '6px 6px',
+          background: 'white',
+          border: '1px solid #ccc',
+          boxShadow: '2px solid rgba(0, 0, 0, 0.2)',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+      >
+          <CropFreeIcon/>
+        
+      </button>
+      </div>
+
       <FeatureGroup ref={featureGroupRef}>
         {display && segmentData && <GeoJSON key={"segments"} data={segmentData.data} style={segmentStyle}/>}
         {!display && geoJson && routeGeoData && drawSelectedRoute()}
@@ -249,26 +293,5 @@ const MapRoutes = React.memo(() => {
 });
 
 export default MapRoutes;
-
-
-
-
-
-/*
-//Faltan calles opcionales
-    useEffect(()=>{
-      if(segmentData){
-        const data = segmentData.data
-        var geojson = {
-          "type":"FeatureCollection",
-          "features":[]
-        }
-        geojson.features = data.features.filter(item => item.properties.zona === 'S1')
-        setGeoJson(geojson)
-      }
-      
-    },[segmentData])
-    {//route && drawSelectedRoute()}
-*/
 
 

@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const comunasApi = axios.create({
-    baseURL: REACT_APP_API_COMUNAS_URL
+    baseURL: process.env.REACT_APP_API_COMUNAS_URL
 })
 
 
